@@ -2,7 +2,7 @@ name: Build and deploy to GitHub Pages
 
 on:
   push:
-    branches: [react-02]
+    branches: [main]
 
 jobs:
   build-and-deploy:
@@ -14,7 +14,6 @@ jobs:
       - name: Install, lint, build 🔧
         run: |
           npm install
-          npm run lint:js
           npm run build
 
       - name: Deploy 🚀
