@@ -1,10 +1,10 @@
 import {
   Container,
-  SearchForm,
+  // SearchForm,
   Section,
-  Heading,
-  Loader,
-  CountryList,
+  // Heading,
+  // Loader,
+  // CountryList,
 } from 'components';
 
 export const CountrySearch = () => {
@@ -12,7 +12,6 @@ export const CountrySearch = () => {
     <Section>
       <Container>
         <h2>CountrySearch</h2>
-
       </Container>
     </Section>
   );
