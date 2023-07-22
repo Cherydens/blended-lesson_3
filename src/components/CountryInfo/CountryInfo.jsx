@@ -8,36 +8,42 @@ import {
   CountryDetail,
   Accent,
 } from './CountryInfo.styled';
-
+import PropTypes from 'prop-types';
 export const CountryInfo = ({
-  flag,
-  capital,
-  country,
-  id,
-  languages = [],
-  population,
+  country: { flag, capital, countryName, languages = [], population },
 }) => {
   return (
-    <h2>CountryInfo</h2>
-    // <CountryWrapper >
-    //   <Flag>
-    //     <Image />
-    //   </Flag>
-    //   <CountryDescription>
-    //     <CountryCapital>
-    //       Capital: <Accent></Accent>
-    //     </CountryCapital>
+    <CountryWrapper>
+      <Flag>
+        <Image src={flag} alt={countryName} />
+      </Flag>
+      <CountryDescription>
+        <CountryCapital>
+          Capital: <Accent>{capital}</Accent>
+        </CountryCapital>
 
-    //     <CountryTitle></CountryTitle>
+        <CountryTitle>
+          {countryName === 'Russian Federation' ? 'MORDOR' : countryName}
+        </CountryTitle>
 
-    //     <CountryDetail>
-    //       Population: <Accent></Accent>
-    //     </CountryDetail>
+        <CountryDetail>
+          Population: <Accent>{population}</Accent>
+        </CountryDetail>
 
-    //     <CountryDetail>
-    //       Languages: <Accent></Accent>
-    //     </CountryDetail>
-    //   </CountryDescription>
-    // </CountryWrapper>
+        <CountryDetail>
+          Languages: <Accent>{languages.join(', ')}.</Accent>
+        </CountryDetail>
+      </CountryDescription>
+    </CountryWrapper>
   );
+};
+
+CountryInfo.propTypes = {
+  country: PropTypes.shape({
+    flag: PropTypes.string.isRequired,
+    capital: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    countryName: PropTypes.string.isRequired,
+    languages: PropTypes.arrayOf(PropTypes.string),
+    population: PropTypes.number.isRequired,
+  }).isRequired,
 };
