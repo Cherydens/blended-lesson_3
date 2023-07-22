@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/blended-lesson_3/static/css/main.412fc565.css",
+    "main.js": "/blended-lesson_3/static/js/main.4c8bb1c9.js",
+    "index.html": "/blended-lesson_3/index.html",
+    "main.412fc565.css.map": "/blended-lesson_3/static/css/main.412fc565.css.map",
+    "main.4c8bb1c9.js.map": "/blended-lesson_3/static/js/main.4c8bb1c9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.412fc565.css",
+    "static/js/main.4c8bb1c9.js"
+  ]
+}
