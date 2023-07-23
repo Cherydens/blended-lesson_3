@@ -1,5 +1,6 @@
 import { FiSearch } from 'react-icons/fi';
 import { BtnSearch, Select, SearchFormStyled } from './SearchForm.styled';
+import { useState } from 'react';
 
 const regions = [
   { id: 'africa', value: 'africa', name: 'Africa' },
@@ -9,14 +10,30 @@ const regions = [
   { id: 'oceania', value: 'oceania', name: 'Oceania' },
 ];
 
-export const SearchForm = () => {
+export const SearchForm = ({ onSubmit }) => {
+  const [query, setQuery] = useState('');
+
+  const onHandleChange = ({ target: { value } }) => {
+    setQuery(value);
+  };
+
   return (
-    <SearchFormStyled>
+    <SearchFormStyled
+      onSubmit={e => {
+        e.preventDefault();
+        onSubmit(query);
+      }}
+    >
       <BtnSearch type="submit">
         <FiSearch size="16px" />
       </BtnSearch>
-      <Select aria-label="select" name="region" required>
-        <option selected disabled defaultValue="">
+      <Select
+        aria-label="select"
+        name="region"
+        required
+        onChange={onHandleChange}
+      >
+        <option selected disabled defaultValue={''}>
           Select a region and press enter
         </option>
         {regions &&
