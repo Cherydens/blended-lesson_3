@@ -1,10 +1,10 @@
 import {
   Container,
-  SearchForm,
+  // SearchForm,
   Section,
-  Heading,
-  Loader,
-  CountryList,
+  // Heading,
+  // Loader,
+  // CountryList,
 } from 'components';
 import { useFetchByRegion } from 'hooks';
 
