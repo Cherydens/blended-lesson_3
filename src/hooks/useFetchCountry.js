@@ -8,7 +8,7 @@ export const useFetchCountry = () => {
   const [error, setError] = useState(null);
 
   const { id } = useParams();
-  console.log('id:', id);
+  // console.log('id:', id);
 
   useEffect(() => {
     setIsLoading(true);
